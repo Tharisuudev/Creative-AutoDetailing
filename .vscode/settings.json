@@ -24,7 +24,7 @@
   "prettier.enable": true,
   "prettier.singleQuote": false,
   "prettier.tabWidth": 2,
-  "prettier.semi": false,
+  "prettier.semi": true,
 
   // terminal
   "terminal.integrated.fontSize": 16,
