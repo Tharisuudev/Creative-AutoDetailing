@@ -8,6 +8,13 @@ body {
   font-family: "Barlow", sans-serif;
 }
 
+:root {
+  --cor-roxa: rgb(92, 88, 211);
+  --cor-cyano: rgb(100, 182, 208);
+  --cor-verde-turquesa: rgb(87, 196, 169);
+  --cor-roxa-escura: rgb(85, 27, 153);
+}
+
 h1,
 h2,
 h3,
