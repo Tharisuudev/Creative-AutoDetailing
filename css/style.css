@@ -43,7 +43,7 @@ a:focus {
   font-size: 16px;
   font-weight: 500;
   color: #ffffff;
-  background: #e81c2e;
+  background: var(--cor-roxa);
   border: none;
   border-radius: 60px;
   box-shadow: inset 0 0 0 0 #202c45;
@@ -53,7 +53,7 @@ a:focus {
 }
 
 .btn.btn-custom:hover {
-  color: #e81c2e;
+  color: var(--cor-roxa-escura);
   background: #202c45;
   box-shadow: inset 200px 0 0 0 #202c45;
 }
@@ -144,7 +144,7 @@ a:focus {
   right: 15px;
   bottom: 15px;
   transition: 0.5s;
-  background: #e81c2e;
+  background: var(--cor-roxa-escura);
   border-radius: 44px;
   z-index: 9;
 }
@@ -176,7 +176,7 @@ a:focus {
 
 .top-bar .logo h1 {
   margin: -4px 0 0 0;
-  color: #e81c2e;
+  color: var(--cor-roxa);
   font-size: 50px;
   line-height: 50px;
   font-weight: 800;
@@ -185,7 +185,7 @@ a:focus {
 }
 
 .top-bar .logo h1 span {
-  color: #202c45;
+  color: var(--cor-roxa);
 }
 
 .top-bar .logo img {
