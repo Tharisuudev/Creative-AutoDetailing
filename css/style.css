@@ -205,7 +205,7 @@ a:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #202c45;
+  background: var(--cor-roxa);
   border-radius: 40px;
 }
 
@@ -242,7 +242,7 @@ a:focus {
 /**********************************/
 .nav-bar {
   position: relative;
-  background: #202c45;
+  background: var(--cor-roxa);
 }
 
 .nav-bar.nav-sticky {
@@ -256,7 +256,7 @@ a:focus {
 
 .nav-bar .navbar {
   padding: 20px 0;
-  background: #202c45 !important;
+  background: var(--cor-roxa) !important;
   transition: 0.3s;
 }
 
@@ -276,7 +276,7 @@ a:focus {
 
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
-  color: #e81c2e;
+  color: var(--cor-roxa);
 }
 
 .nav-bar .dropdown-menu {
