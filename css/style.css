@@ -176,7 +176,15 @@ a:focus {
 
 .top-bar .logo h1 {
   margin: -4px 0 0 0;
-  color: var(--cor-roxa);
+  background: rgb(85, 27, 153);
+  background: linear-gradient(
+    45deg,
+    rgba(85, 27, 153, 1) 0%,
+    rgba(92, 88, 211, 1) 29%,
+    rgba(100, 182, 208, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 50px;
   line-height: 50px;
   font-weight: 800;
@@ -276,7 +284,7 @@ a:focus {
 
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
-  color: var(--cor-roxa);
+  color: var(--cor-verde-turquesa);
 }
 
 .nav-bar .dropdown-menu {
@@ -289,13 +297,13 @@ a:focus {
 .nav-bar .btn.btn-custom {
   color: #202c45;
   background: #ffffff;
-  box-shadow: inset 0 0 0 0 #e81c2e;
+  box-shadow: inset 0 0 0 0 var(--cor-cyano);
 }
 
 .nav-bar .btn:hover {
   color: #ffffff;
-  background: #e81c2e;
-  box-shadow: inset 200px 0 0 0 #e81c2e;
+  background: var(--cor-verde-turquesa);
+  box-shadow: inset 200px 0 0 0 var(--cor-roxa-escura);
 }
 
 @media (min-width: 992px) {
@@ -385,7 +393,7 @@ a:focus {
 }
 
 .carousel .carousel-text h3 {
-  color: #e81c2e;
+  color: var(--cor-verde-turquesa);
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 4px;
@@ -414,7 +422,7 @@ a:focus {
 }
 
 .carousel .btn.btn-custom:hover {
-  color: #e81c2e;
+  color: var(--cor-cyano);
 }
 
 .carousel .owl-nav {
@@ -453,7 +461,7 @@ a:focus {
 .carousel .owl-nav .owl-prev:hover,
 .carousel .owl-nav .owl-next:hover {
   color: #ffffff;
-  background: #e81c2e;
+  background: var(--cor-roxa-escura);
 }
 
 .carousel .animated {
@@ -560,10 +568,6 @@ a:focus {
   color: #ffffff;
 }
 
-.page-header a:hover {
-  color: #e81c2e;
-}
-
 .page-header a::after {
   position: absolute;
   content: "/";
@@ -626,7 +630,7 @@ a:focus {
   font-weight: 700;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #e81c2e;
+  color: var(--cor-roxa);
 }
 
 .section-header p::after {
@@ -636,7 +640,7 @@ a:focus {
   height: 2px;
   left: 25%;
   bottom: 0;
-  background: #e81c2e;
+  background: var(--cor-cyano);
 }
 
 .section-header.text-left p::after {
@@ -705,11 +709,20 @@ a:focus {
 
 .about .about-content ul li {
   margin-bottom: 5px;
+  color: var(--cor-roxa-escura);
 }
 
 .about .about-content ul li i {
   margin-right: 8px;
-  color: #e81c2e;
+  background: rgb(85, 27, 153);
+  background: linear-gradient(
+    45deg,
+    rgba(85, 27, 153, 1) 0%,
+    rgba(92, 88, 211, 1) 29%,
+    rgba(100, 182, 208, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /*******************************/
@@ -740,7 +753,13 @@ a:focus {
   margin: 0;
   font-size: 60px;
   line-height: 60px;
-  background-image: linear-gradient(#e81c2e, #202c45);
+  background: rgb(85, 27, 153);
+  background: linear-gradient(
+    45deg,
+    rgba(85, 27, 153, 1) 0%,
+    rgba(92, 88, 211, 1) 29%,
+    rgba(100, 182, 208, 1) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: 0.5s;
@@ -779,7 +798,7 @@ a:focus {
 .facts .facts-item i {
   margin-top: 15px;
   font-size: 45px;
-  color: #e81c2e;
+  color: var(--cor-roxa);
 }
 
 .facts .facts-text {
@@ -869,7 +888,7 @@ a:focus {
 
 .price .price-item.featured-item h2,
 .price .price-item.featured-item h3 {
-  color: #e81c2e;
+  color: var(--cor-roxa-escura);
 }
 
 .price .price-body {
@@ -903,27 +922,27 @@ a:focus {
 }
 
 .price .price-item .price-footer .btn.btn-custom {
-  color: #e81c2e;
+  color: var(--cor-verde-turquesa);
   background: #202c45;
-  box-shadow: inset 0 0 0 0 #e81c2e;
+  box-shadow: inset 0 0 0 0 var(--cor-roxa-escura);
 }
 
 .price .price-item .price-footer .btn.btn-custom:hover {
   color: #ffffff;
-  background: #e81c2e;
-  box-shadow: inset 200px 0 0 0 #e81c2e;
+  background: var(--cor-roxa-escura);
+  box-shadow: inset 200px 0 0 0 var(--cor-cyano);
 }
 
 .price .price-item.featured-item .price-footer .btn.btn-custom {
   color: #ffffff;
-  background: #e81c2e;
+  background: var(--cor-roxa);
   box-shadow: inset 0 0 0 0 #202c45;
 }
 
 .price .price-item.featured-item .price-footer .btn.btn-custom:hover {
-  color: #e81c2e;
-  background: #202c45;
-  box-shadow: inset 200px 0 0 0 #202c45;
+  color: var(--cor-cyano);
+  background: var(--cor-roxa);
+  box-shadow: inset 200px 0 0 0 var(--cor-roxa-escura);
 }
 
 /*******************************/
@@ -943,7 +962,7 @@ a:focus {
 .location .location-item i {
   padding-top: 3px;
   font-size: 30px;
-  color: #e81c2e;
+  color: var(--cor-roxa-escura);
 }
 
 .location .location-text {
@@ -966,7 +985,7 @@ a:focus {
 
 .location .location-form {
   padding: 45px 30px;
-  background: #e81c2e;
+  background: var(--cor-roxa);
   border-radius: 5px;
 }
 
@@ -1007,14 +1026,14 @@ a:focus {
 
 .location .location-form .btn.btn-custom {
   width: 100%;
-  color: #e81c2e;
+  color: var(--cor-roxa-escura);
   background: #ffffff;
   box-shadow: inset 0 0 0 0 #202c45;
 }
 
 .location .location-form .btn.btn-custom:hover {
   color: #ffffff;
-  background: #e81c2e;
+  background: var(--cor-verde-turquesa);
   box-shadow: inset 400px 0 0 0 #202c45;
 }
 
@@ -1064,7 +1083,7 @@ a:focus {
 }
 
 .team .team-item:hover .team-text {
-  background: #e81c2e;
+  background: var(--cor-roxa);
 }
 
 .team .team-text h2 {
@@ -1105,7 +1124,7 @@ a:focus {
 }
 
 .team .team-item:hover .team-social a {
-  background: #e81c2e;
+  background: var(--cor-roxa);
 }
 
 .team .team-social a:hover {
@@ -1944,7 +1963,7 @@ a:focus {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 2px;
-  color: #e81c2e;
+  color: var(--cor-roxa);
 }
 
 .footer .footer-link a {
@@ -2044,11 +2063,11 @@ a:focus {
 }
 
 .footer .copyrighte p a {
-  color: #e81c2e;
+  color: var(--cor-cyano);
   font-weight: 700;
   letter-spacing: 1px;
 }
 
 .footer .copyrighte p a:hover {
-  color: #ffffff;
+  color: var(--cor-cyano);
 }
