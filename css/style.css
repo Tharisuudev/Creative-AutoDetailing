@@ -1361,9 +1361,10 @@ a:focus {
 
 .contact .contact-info {
   width: 100%;
+  height: 90%;
   margin-bottom: 45px;
   padding: 35px 30px 10px 30px;
-  border-radius: 5px;
+  border-radius: 10px;
   background: #202c45;
 }
 
@@ -1382,8 +1383,8 @@ a:focus {
 }
 
 .contact .contact-info-icon {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2070,4 +2071,8 @@ a:focus {
 
 .footer .copyrighte p a:hover {
   color: var(--cor-cyano);
+}
+
+.pequeno {
+  font-size: 1rem;
 }
