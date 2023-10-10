@@ -728,6 +728,25 @@ a:focus {
 /*******************************/
 /********* Service CSS *********/
 /*******************************/
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.image {
+  margin: 10px;
+  max-width: 450px;
+  text-align: center;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+}
+
 .service {
   position: relative;
   width: 100%;
