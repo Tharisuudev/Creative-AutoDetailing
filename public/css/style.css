@@ -158,6 +158,26 @@ a:focus {
   background: #202c45;
 }
 
+.verified-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  fill: #4e1bc5;
+}
+
+#whatsappSvg svg {
+  position: fixed; /* Posicionamento fixo para permanecer no canto da tela */
+  bottom: 80px; /* Distância do fundo */
+  right: 10px; /* Distância da direita */
+  cursor: pointer; /* Cursor de apontar ao passar por cima */
+  z-index: 1000; /* Z-index alto para estar na frente de outros elementos */
+}
+
+.whatsapp-icon {
+  width: 50px; /* Largura do ícone */
+  height: auto; /* Altura automática para manter a proporção */
+}
+
 /**********************************/
 /********** Top Bar CSS ***********/
 /**********************************/
@@ -166,10 +186,14 @@ a:focus {
   height: 75px;
   display: flex;
   align-items: center;
-  background: #ffffff;
+  background: #000;
 }
 
-.top-bar .logo {
+.top-bar .logo a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   text-align: left;
   overflow: hidden;
 }
@@ -185,7 +209,7 @@ a:focus {
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 50px;
+  font-size: 24px;
   line-height: 50px;
   font-weight: 800;
   letter-spacing: 1px;
@@ -194,6 +218,14 @@ a:focus {
 
 .top-bar .logo h1 span {
   color: var(--cor-roxa);
+}
+
+.top-bar-text h3 {
+  color: #66d8ca;
+}
+
+.top-bar-text p {
+  color: #5f68dd;
 }
 
 .top-bar .logo img {
@@ -348,6 +380,7 @@ a:focus {
   position: relative;
   width: 100%;
   min-height: 400px;
+  max-height: 900px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -729,6 +762,54 @@ a:focus {
 /********* Service CSS *********/
 /*******************************/
 
+#service{
+  height: 100%;
+}
+
+#car-gallery-container{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.gallery-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.gallery-container h2{
+  color: #202c45;
+  font-weight: 700;
+}
+.gallery-car{
+  max-width: 1300px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.photo-car {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  width: 50vmin;
+  height: 25vmin;
+  transition: 0.1s linear;
+  border-radius: 4px;
+}
+
+.photo-car:hover{
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  scale: 1.02;
+  margin: 4px;
+}
+
 .gallery {
   display: flex;
   justify-content: center;
@@ -853,6 +934,462 @@ a:focus {
 /*******************************/
 /********* Pricing CSS *********/
 /*******************************/
+
+.carousel-car {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+#details {
+  text-align: center;
+  margin-top: 50px;
+  display: none; /* Inicialmente oculto */
+}
+
+#details.show {
+  display: block; /* Mostrar quando necessário */
+}
+
+#details h2 {
+  text-transform: uppercase;
+  user-select: none;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  background: #1c91ff;
+  background: linear-gradient(to right, #1c91ff 0%, #0e2398 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.car {
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.15s linear;
+}
+
+.car {
+  width: 180px;
+  height: 100px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  user-select: none;
+  margin-top: 64px;
+  margin-bottom: 24px;
+}
+
+.car p {
+  text-align: center;
+  color: #050d38;
+  font-weight: 600;
+  margin: 16px 0;
+}
+
+.car div {
+  border-radius: 8px;
+}
+
+#minivan {
+  width: 100%;
+  height: 100%;
+  background-image: url(../carros/minivan.png);
+  background-position: center;
+  background-size: cover;
+}
+
+#pickup {
+  width: 100%;
+  height: 100%;
+  background-image: url(../carros/pickup.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+#suv {
+  width: 100%;
+  height: 100%;
+  background-image: url(../carros/360_F_226140782_TpfqLT3WtA3yvMZnYE9TiWNFRYU7Jhdc.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+#small {
+  width: 100%;
+  height: 100%;
+  background-image: url(../carros/small.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.car.selected {
+  transform: scale(1.05);
+  border: 1px solid #ced7e9;
+}
+
+#wash-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 16px;
+}
+
+#price {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#container-price {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wash-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  color: #050d38;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 10px;
+  background: #f9fbfdf8;
+  padding: 10px;
+  border-radius: 12px;
+  min-width: 300px;
+  max-width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease;
+  margin: 0 10px;
+  transition: 0.1s linear;
+}
+
+.wash-card:hover {
+  scale: 1.02;
+}
+
+#priceElement {
+  font-size: 32px;
+  font-weight: 600;
+  color: #4e1bc5;
+}
+
+.wash-list button {
+  background: linear-gradient(45deg, #1c91ff, #2336e4); /* Cor chamativa */
+  font-weight: 600;
+  color: #e8effc;
+  border: none;
+  font-size: 16px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.1s linear;
+}
+
+.wash-list button:hover {
+  scale: 1.05; /* Cor mais escura quando hover */
+}
+
+.wash-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font-weight: 500;
+  padding: 0px;
+  color: #050d38;
+}
+.wash-card ul li {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  font-weight: 5s00;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+#form-container {
+  text-align: center;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 20px;
+  border-radius: 16px;
+  z-index: 1000;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
+}
+
+#sendBtn {
+  margin-top: 32px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #0b26c0, #1c91ff);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 32px;
+  cursor: pointer;
+  transition: 0.1s linear;
+}
+
+#sendBtn:hover {
+  scale: 1.03;
+}
+#sendBtn:active {
+  scale: 0.95;
+}
+textarea {
+  font-family: sans-serif;
+  outline: none;
+  color: #fff;
+  border: 1px solid #1c91ff;
+  background-color: transparent;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.fechar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(
+    45deg,
+    #1c91ff,
+    #2336e4
+  ); /* Degradê de azul claro a roxo escuro */
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none; /* Remove a borda ao focar */
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: 0.1s linear; /* Adiciona transição à cor da borda */
+}
+.fechar:hover {
+  scale: 1.02;
+}
+.fechar:active {
+  scale: 0.95;
+}
+
+form p {
+  user-select: none;
+  background-color: #e8effc;
+  color: #050d38;
+  font-size: 18px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.grid-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+  gap: 20px; /* Espaçamento entre os elementos */
+}
+
+.grid-form input[type="text"],
+.grid-form input[type="email"],
+.grid-form input[type="tel"] {
+  width: calc(100% - 20px); /* Largura dos inputs */
+}
+
+#form-container h1 {
+  color: #1c91ff;
+}
+#form-container input {
+  width: 100%;
+  border: 1px solid #1c91ff;
+  border-radius: 8px;
+  color: #fff;
+  outline: none;
+  padding: 12px;
+  font-size: 16px;
+  background-color: transparent;
+  font-family: sans-serif;
+}
+#form-container textarea {
+  width: 100%;
+}
+#form-container input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: capitalize;
+}
+
+#comentario {
+  width: calc(100% - 20px); /* Largura do textarea */
+  max-width: 100%; /* Largura máxima igual à largura do contêiner pai */
+  max-height: 200px; /* Altura máxima em pixels */
+  grid-column: span 2; /* Ocupa duas colunas */
+  resize: none;
+}
+
+.wash-card button {
+  width: calc(100% - 20px); /* Largura igual aos inputs */
+  background: linear-gradient(
+    45deg,
+    #1c91ff,
+    #0b26c0
+  ); /* Degradê de azul claro a roxo escuro */
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none; /* Remove a borda ao focar */
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.1s linear; /* Adiciona transição à cor de fundo */
+}
+
+.wash-card button.show-more-btn{
+  margin-top: 8px;
+  background: none;
+  text-decoration: underline;
+  text-decoration-color: #4e1bc5;
+  padding: 0;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #050d38;
+}
+
+.wash-card button:hover,
+.fechar {
+  scale: 1.02;
+}
+.wash-card button:active,
+.fechar:active {
+  scale: 0.95;
+}
+.box-carousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.box-carousel h2 {
+  font-size: 24px;
+  color: #050d38;
+}
+.box-carousel h1 {
+  user-select: none;
+  font-size: 32px;
+  letter-spacing: 5px;
+  margin-top: 36px;
+  text-transform: uppercase;
+  background: #1c91ff;
+  background: linear-gradient(to right, #1c91ff 0%, #0e2398 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  /* Estilos específicos para tablets */
+  .grid-form {
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas para tablets */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #form-container {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .grid-form {
+    grid-template-columns: 1fr; /* Uma coluna */
+  }
+
+  #comentario {
+    width: calc(100% - 20px); /* Largura do textarea */
+    grid-column: span 1; /* Ocupa apenas uma coluna */
+  }
+
+  .wash-card button,
+  .grid-form input[type="text"],
+  .grid-form input[type="email"],
+  .grid-form input[type="tel"] {
+    width: calc(100% - 20px); /* Largura igual aos inputs */
+  }
+  #form-container h1 {
+    font-size: 20px;
+    margin-top: 12px;
+  }
+
+  .grid-form p {
+    margin: 0px;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  #sendBtn {
+    margin-top: 12px;
+    padding: 8px 16spx;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #form-container {
+    width: 80%;
+    padding: 5px;
+  }
+
+  .wash-card button,
+  .grid-form input[type="text"],
+  .grid-form input[type="email"],
+  .grid-form input[type="tel"],
+  textarea {
+    width: 90%;
+    font-size: 12px; /* Reduz o tamanho da fonte */
+  }
+
+  #comentario {
+    width: 90%;
+  }
+
+  #form-container h1 {
+    font-size: 16px;
+    margin-top: 12px;
+  }
+
+  .grid-form p {
+    margin: 0px;
+    font-size: 12px;
+  }
+
+  #sendBtn {
+    margin-top: 12px;
+    padding: 8px 16spx;
+  }
+}
+
 .price {
   position: relative;
   width: 100%;
