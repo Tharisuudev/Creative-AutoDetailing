@@ -8,10 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const carTypeDisplay = document.getElementById("carTypeDisplay")
 
   const prices = {
-    Small: ["$75.00", "$120.00", "$300.00", "$175.00"],
-    SUV: ["$85.00", "$130.00", "$310.00", "$185.00"],
-    Minivan: ["$95.00", "$140.00", "$400.00", "$195.00"],
-    Truck: ["$105.00", "$150.00", "$410.00", "$205.00"],
+    Small: ["$75.00", "$120.00", "$175.00", "$300.00"],
+    SUV: ["$85.00", "$130.00", "$185.00", "$310.00"],
+    Minivan: ["$95.00", "$140.00", "$195.00", "$400.00"],
+    Truck: ["$105.00", "$150.00", "$205.00", "$410.00"],
   }
 
   function updateWashList(carType) {
@@ -51,17 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "Hard Paste Wax Protection",
       ],
     },
-    "Full Detail": {
-      services: [
-        "Interior Deep Cleaning",
-        "Seats & Mats Shampoo",
-        "Exterior Wash",
-        "Decontamination Paint",
-        "Hard Paste Wax Protection",
-        "Plastic Revitalization",
-        "Wheels & Tire Shine",
-      ],
-    },
     "Interior Detail": {
       services: [
         "Interior Deep Cleaning",
@@ -71,6 +60,17 @@ document.addEventListener("DOMContentLoaded", function () {
         "Exterior Wash",
         "Wheels & Tire Shine",
         "Spray Wax",
+      ],
+    },
+    "Full Detail": {
+      services: [
+        "Interior Deep Cleaning",
+        "Seats & Mats Shampoo",
+        "Exterior Wash",
+        "Decontamination Paint",
+        "Hard Paste Wax Protection",
+        "Plastic Revitalization",
+        "Wheels & Tire Shine",
       ],
     },
   }
@@ -84,30 +84,28 @@ document.addEventListener("DOMContentLoaded", function () {
     washCard.appendChild(title)
 
     const serviceList = document.createElement("ul")
-    serviceList.classList.add("service-list") // Adicionando uma classe à lista de serviços
+    serviceList.classList.add("service-list")
     for (let i = 0; i < 4 && i < services.length; i++) {
-      // Exibindo apenas os 4 primeiros serviços
-      const listItem = document.createElement("li")
-      listItem.innerHTML = `<i class="far fa-check-circle"></i>${services[i]}`
-      serviceList.appendChild(listItem)
+        const listItem = document.createElement("li")
+        listItem.innerHTML = `<i class="far fa-check-circle"></i>${services[i]}`
+        serviceList.appendChild(listItem)
     }
     washCard.appendChild(serviceList)
 
     if (services.length > 4) {
-      // Adicionando um botão "show more" se houver mais de 4 serviços
-      const showMoreBtn = document.createElement("button")
-      showMoreBtn.textContent = "Show more"
-      showMoreBtn.classList.add("show-more-btn") // Adicionando uma classe ao botão "show more"
-      showMoreBtn.addEventListener("click", () => {
-        serviceList.innerHTML = "" // Limpando a lista de serviços
-        services.forEach((service) => {
-          const listItem = document.createElement("li")
-          listItem.innerHTML = `<i class="far fa-check-circle"></i>${service}`
-          serviceList.appendChild(listItem)
+        const showMoreBtn = document.createElement("button")
+        showMoreBtn.textContent = "Show more"
+        showMoreBtn.classList.add("show-more-btn")
+        showMoreBtn.addEventListener("click", () => {
+            serviceList.innerHTML = ""
+            services.forEach((service) => {
+                const listItem = document.createElement("li")
+                listItem.innerHTML = `<i class="far fa-check-circle"></i>${service}`
+                serviceList.appendChild(listItem)
+            })
+            showMoreBtn.style.display = "none"
         })
-        showMoreBtn.style.display = "none" // Ocultando o botão "show more" após exibir todos os serviços
-      })
-      washCard.appendChild(showMoreBtn)
+        washCard.appendChild(showMoreBtn)
     }
 
     const priceElement = document.createElement("p")
@@ -115,23 +113,16 @@ document.addEventListener("DOMContentLoaded", function () {
     priceElement.id = "priceElement"
     washCard.appendChild(priceElement)
 
-    const chooseBtn = document.createElement("button")
-    chooseBtn.textContent = "Select"
-    chooseBtn.id = `${washType
-      .replace(/\s+/g, "-")
-      .toLowerCase()}-select-button`
-    chooseBtn.addEventListener("click", () => {
-      console.log(washType)
-      washTypeInput.value = washType
-      formContainer.style.display = "block"
-
-      const washTypeSelected = washType
-      document.getElementById("washTypeDisplay").value = washTypeSelected
+    const callBtn = document.createElement("button")
+    callBtn.textContent = "Call"
+    callBtn.addEventListener("click", () => {
+        window.location.href = "tel:+15612257973";
     })
-    washCard.appendChild(chooseBtn)
+    washCard.appendChild(callBtn)
 
     return washCard
-  }
+}
+
   
   cars.forEach((car) => {
     car.addEventListener("click", function () {
@@ -155,61 +146,5 @@ document.addEventListener("DOMContentLoaded", function () {
       // Exibir a seção de detalhes
       detailsSection.style.display = "block"
     })
-  })
-
-  // Dentro do evento de envio do formulário
-  document
-    .getElementById("formulario-email")
-    .addEventListener("submit", async function (event) {
-      event.preventDefault()
-
-      // Obter os dados do formulário
-      const carType = document.getElementById("carTypeDisplay").value
-      const washType = document.getElementById("washTypeDisplay").value
-      const nomeCompleto = document.getElementById("nomeCompleto").value
-      const numeroCliente = document.getElementById("numeroCliente").value
-      const emailCliente = document.getElementById("emailCliente").value
-      const ruaCliente = document.getElementById("ruaCliente").value
-      const codigoPostal = document.getElementById("codigoPostal").value
-      const comentario = document.getElementById("comentario").value
-      const endereco = document.getElementById("endereco").value
-
-      await new Promise((resolve) => setTimeout(resolve, 100));
-
-      const formData = new FormData()
-      formData.append("carType", carType)
-      formData.append("washType", washType)
-      formData.append("nomeCompleto", nomeCompleto)
-      formData.append("numeroCliente", numeroCliente)
-      formData.append("emailCliente", emailCliente)
-      formData.append("ruaCliente", ruaCliente)
-      formData.append("codigoPostal", codigoPostal)
-      formData.append("comentario", comentario)
-      formData.append("endereco", endereco)
-
-      console.log(formData)
-
-      // Enviar os dados do formulário para o servidor
-      fetch("/", {
-        method: "POST",
-        body: formData,
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          // Exibir um alerta com base na resposta do servidor
-          if (data.status === "success") {
-            alert(data.message)
-          } else if (data.status === "error") {
-            alert(data.message)
-          }
-        })
-        .catch((error) => {
-          console.error("Error:", error)
-        })
-    })
-  // Dentro do evento de clique no botão de fechar
-  document.querySelector(".fechar").addEventListener("click", function () {
-    // Ocultar o formulário quando o botão "fechar" é clicado
-    formContainer.style.display = "none"
   })
 })
